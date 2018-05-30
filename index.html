@@ -1,0 +1,140 @@
+<html>
+    <head>
+        
+    </head>
+
+    <body>
+        <div class="titleImage">
+            <div class="rulesText"></div>
+            <div class="startButton"></div>
+        </div>
+        <div class="gamePlay">
+            <div class="topGamebar">
+                <div class="faceImage"></div>
+                <div class="question"></div>
+            </div>
+            <div class="timeBar">
+                <div class="extendingTimeBar"></div>
+            </div>
+            <div class="answer">
+                <div class="answerText aValue" value="a"></div>
+                <div class="answerText bValue" value="b"></div>
+                <div class="answerText cValue" value="c"></div>
+                <div class="answerText dValue" value="d"></div>
+            </div>
+        </div>
+        <div class="solution">
+            <div class="theCorrectAnswer"></div>
+        </div>
+        <div class="gameScore">
+            <div class="finalScore"></div>
+            <div class="playAgainButton"></div>
+        </div>
+
+
+        <script type="text/javascript">
+            //CLASSIC ANIMATION TRIVIA GAME
+            var questions = [
+                {
+                    question:'Gertie, star of one of the first cartoon shorts, was what sort of animal?',
+                    a:'Cow',
+                    b:'Giraffe',
+                    c:'Dinosaur',
+                    d:'Woodpecker', 
+                    correctAnswer:'c'
+                },
+                {
+                    question:'Merrie Melodies usually starred which cartoon group?',
+                    a:'Mickey Mouse and Pals',
+                    b:'Bugs Bunny and Friends',
+                    c:'Heathcliff and the Junkyard Jazz Cats',
+                    d:'He-man and the Masters of the Universe', 
+                    correctAnswer:'c'
+                },
+                {
+                    question:'Prior to Mickey Mouse, what other cartoon mascot did Walt Disney create?',
+                    a:'Oswald the Rabbit',
+                    b:'Harvey the Rabbit',
+                    c:'Wrigley the Wombat',
+                    d:'Sonic the Hedgehog',
+                    correctAnswer:'a'
+                },
+                {
+                    question:'This method of transfering a live action image to animation was used throughout classic Disney animation.',
+                    a:'Telescoping',
+                    b:'Rotoscoping',
+                    c:'Kinetoscoping',
+                    d:'Fluoroscopy',
+                    correctAnswer:'b'
+                },
+                {
+                    question:'In addition to Optimus Prime, Peter Cullen also voiced this famous character:',
+                    a:'Batman',
+                    b:'Mickey Mouse',
+                    c:'Megatron',
+                    d:'Eeyore',
+                    correctAnswer:'d'
+                },
+                {
+                    question:'Mickey Mouse was almost named this d(r)eadful name:',
+                    a:'Maleficent',
+                    b:'Mortimer',
+                    c:'Maxwell',
+                    d:'Rockso',
+                    correctAnswer:'b'
+                },
+                {
+                    question:'This cartoon duck was a favorite of dictator Benito Mussolini:',
+                    a:'Donald',
+                    b:'Daffy',
+                    c:'Scrooge',
+                    d:'Humberto',
+                    correctAnswer:'a'
+                },
+                {
+                    question:'In addition to Bugs, Daffy, and Porky, this creator also contributed to the creation of Droopy Dog and Screwy Squirrel:',
+                    a:'Walt Disney',
+                    b:'Hayao Miyazaki',
+                    c:'Tex Avery',
+                    d:'William Hanna',
+                    correctAnswer:'c'
+                },
+                {
+                    question:'Prior to forming their own production company, William Hanna and Joseph Barbera created this cartoon duo for MGM:',
+                    a:'Fred and Barney',
+                    b:'Tom and Jerry',
+                    c:'Popeye and Olive Oyl',
+                    d:'Chip and Dale',
+                    correctAnswer:'b'
+                },
+                {
+                    question:'In addition to title characters, this show also contained shorts starring Dudley Do-Right and Mr. Peabody, a time-traveling dog.',
+                    a:'The Adventures of Rocky and Bullwinkle',
+                    b:'Looney Tunes',
+                    c:'The Animaniacs',
+                    d:'Mr. Magoo and his Friends',
+                    correctAnswer:'a'
+                },
+            ];
+
+                var timerBarNumber = 20000;                             //for use for the bar
+                var questionNumber = 0;                                 //which part of the question arrary are we on
+                var gameIsPlaying = false;                              //are we accepting input currently
+                var gameIsFinished = false;                             //is the game done running
+                var answersCorrect = 0;                                 //number of correct answers
+                
+                console.log(questions[1].correctAnswer);
+                console.log(questions[0].c);
+                console.log(questions[9]);
+
+         
+                //NICE! This appears to be the correct format for doing this. Time to do some blocking and assets,
+                //with this correct everything else is just blocking, intervals and assets
+
+        </script>
+
+    </body>
+</html>
+
+
+
