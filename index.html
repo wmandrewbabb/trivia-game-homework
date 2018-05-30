@@ -17,10 +17,10 @@
                 <div class="extendingTimeBar"></div>
             </div>
             <div class="answer">
-                <div class="answerText aValue" value="a"></div>
-                <div class="answerText bValue" value="b"></div>
-                <div class="answerText cValue" value="c"></div>
-                <div class="answerText dValue" value="d"></div>
+                <div class="answerTextButton aValue" value="a"></div>
+                <div class="answerTextButton bValue" value="b"></div>
+                <div class="answerTextButton cValue" value="c"></div>
+                <div class="answerTextButton dValue" value="d"></div>
             </div>
         </div>
         <div class="solution">
@@ -122,14 +122,33 @@
                 var gameIsPlaying = false;                              //are we accepting input currently
                 var gameIsFinished = false;                             //is the game done running
                 var answersCorrect = 0;                                 //number of correct answers
-                
+                var gameIntro = true;                                   //game intro needs to be played
+
                 console.log(questions[1].correctAnswer);
                 console.log(questions[0].c);
                 console.log(questions[9]);
-
-         
+                console.log(questions.length);
+                
                 //NICE! This appears to be the correct format for doing this. Time to do some blocking and assets,
                 //with this correct everything else is just blocking, intervals and assets
+
+                //RESET FUNCTION FOR THE END
+                //GAME PLAY FUNCTION
+                //      -GAME INTRO IF THIS IS THE FIRST PLAY
+                //          -CLICK THROUGH TO START
+                //          -HIDE DISPLAY OF THE INTRO DIV
+                //          -SWITCH DISPLAY TO SHOW BUT KEEP VISIBILITY HIDDEN ON THE GAME DIV SO FORMATTING DOESN'T HICCUP
+                //      -QUESTION FADES IN
+                //      -ANSWERS APPEAR AND TIMER STARTS AND gameIsPlaying so Clicks can start
+                //          -ON TIMER EXPIRE, DISPLAY 'TIME'S UP' in theCorrectAnswer DIV
+                //          -ON CLICK, TAKE VALUE AND COMPARE TO questions[x].correctAnswer
+                //              -IF CORRECT, ADD TO THE answersCorrect, DISPLAY "CORRECT" in theCorrectAnswer DIV
+                //              -IF NOT CORRECT, DISPLAY 'INCORRECT' in theCorrectAnswer DIV
+                //      -REPEAT 10 TIMES (or questions.length);
+                //      -AFTER FINAL QUESTION DISPLAY HIDE ALL OF THE THINGS
+                //      -REVEAL SUMMARY SCREEN AND RESET
+
+                //      -ONCLICK FUNCTION (NOT SURE HOW THIS IS GOING TO WORK WITH THE TIMING INTERVALS AND INTERRUPTIONS)
 
         </script>
 
