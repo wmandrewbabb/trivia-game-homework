@@ -1,0 +1,291 @@
+/* font-family: 'Sigmar One', cursive;
+font-family: 'Carter One', cursive;
+font-family: 'Bubblegum Sans', cursive;
+font-family: 'Lilita One', cursive;
+font-family: 'Fontdiner Swanky', cursive;
+font-family: 'Suez One', serif;
+font-family: 'Rammetto One', cursive;
+font-family: 'Bowlby One', cursive;
+font-family: 'Fascinate', cursive;
+font-family: 'Erica One', cursive; */
+
+body {
+    background: black;
+}
+
+/* these are our four main gameplay divs that will be toggled */
+
+.titleImage {
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    display: table;
+    background:  #b44811;
+    background: radial-gradient(circle at center, #03152b 0%,#010914 17%,#c45714 17%,#670003 27%,#c54c13 27%,#60070d 39%,#b0410c 39%,#490407 54%,#8d4009 54%,#3c040d 74%,#6e2a07 74%,#2b0208 94%,#481a02 94%,#481a02 94%,#2f010b 100%);
+    position: relative;
+    display: block;
+    visibility: visible;
+}
+
+#facePopper {
+    /* position: absolute;
+    right: 20%;
+    top: 50%;
+    bottom: 10%;
+    width: auto;
+    height: 45vh;
+    text-align: center;
+    font-size: 96px;
+    line-height: 8px; */ /*leaving this in case I need it again later */
+    height:300px;
+    width: 280px;
+    margin:0 auto;
+    position:absolute;
+    left:50%;
+    top:50%;
+    margin-left:-130px;
+    margin-top:-160px;
+}
+
+.bounceIn {
+    -webkit-animation-duration: 0.75s;
+    animation-duration: 0.75s;
+    -webkit-animation-name: bounceIn;
+    animation-name: bounceIn;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+#titleCardPng {
+    margin:0 auto;
+    width: 90%;
+    margin-top: 15%;
+}
+
+#clickThru {
+    position: absolute;
+    bottom: 24px;
+    font-size: 24px;
+    text-align: center;
+    color: white;
+    text-shadow: black 3px 3px;
+    width: 100%;
+    font-family: 'Sigmar One', cursive;
+}
+
+.gamePlay {
+    background:  #b44811;
+    display: none;
+    visibility: visible;
+}
+
+.solution {
+    background:  #b44811;
+    display: none;
+    visibility: visible;
+}
+
+.gameScore {
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    display: table;
+    background:  #b44811;
+    background: radial-gradient(circle at center, #03152b 0%,#010914 17%,#c45714 17%,#670003 27%,#c54c13 27%,#60070d 39%,#b0410c 39%,#490407 54%,#8d4009 54%,#3c040d 74%,#6e2a07 74%,#2b0208 94%,#481a02 94%,#481a02 94%,#2f010b 100%);
+    position: relative;
+    display: none;
+    visibility: visible;
+}
+
+/*these are the individual element styles*/
+
+.ourQuizTitle {
+    margin-top: 20vh;
+    width: 70%;
+    height: auto;
+    margin: 0 auto;
+}
+
+.answerTextButton {
+    background: black;
+    color: white;
+    border-width: 2px;
+    border-color: #60070d;
+    border-style: solid;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 20%;
+    margin-right: 20%;
+    float: left;
+    min-width: 60%;
+    font-size: 24pt;
+    text-align: center;
+    font-family: 'Sigmar One', cursive;
+}
+
+.answerTextButton:hover {
+    background: white;
+    color: black;
+}
+
+.gamePlay {
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    display: table;
+    background:  #b44811;
+    background: radial-gradient(circle at center, #03152b 0%,#010914 17%,#c45714 17%,#670003 27%,#c54c13 27%,#60070d 39%,#b0410c 39%,#490407 54%,#8d4009 54%,#3c040d 74%,#6e2a07 74%,#2b0208 94%,#481a02 94%,#481a02 94%,#2f010b 100%);
+    padding-top: 10px;
+}
+
+.topGamebar {
+    margin-top:10px;
+}
+
+.questionText {
+    background: black;
+    color: white;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #60070d;
+    font-size: 24pt;
+    padding: 20px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    margin-left: 10%;
+    margin-right: 10%;
+    border-radius: 5px;
+    min-width: 80%;
+    min-height: 120px;
+    text-align: center;
+    font-family: 'Lilita One', cursive;
+}
+
+.timeBar {
+    width: 100%;
+    background: black;
+    border-style: solid;
+    border-color: orangered;
+    border-top-width: 5px;
+    border-bottom-width: 5px;
+    border-bottom-width: 2px;
+    border-top-width: 2px;
+    min-height: 48px;
+    margin-bottom: 15px;
+}
+
+#extendingTimeBar{
+    width: 100%;
+    height: 40px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    background: black;
+
+}
+
+#extendingTimeBar div{
+    height: 100%;
+    text-align: right;
+    padding: 0 3%; /*set to 0 to make flush*/
+    line-height: 22px; /* same as #progressBar height if we want text middle aligned */
+    width: 0;
+    background-color: white;
+    color: black;
+    font-family: 'Sigmar One', cursive;
+    box-sizing: border-box;
+    line-height: 34px;
+    font-size: 44px;
+  }
+
+@-webkit-keyframes bounceIn {
+    from,
+    20%,
+    40%,
+    60%,
+    80%,
+    to {
+        -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+        animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+
+    0% {
+        opacity: 0;
+        -webkit-transform: scale3d(0.3, 0.3, 0.3);
+        transform: scale3d(0.3, 0.3, 0.3);
+    }
+
+    20% {
+        -webkit-transform: scale3d(1.1, 1.1, 1.1);
+        transform: scale3d(1.1, 1.1, 1.1);
+    }
+
+    40% {
+        -webkit-transform: scale3d(0.9, 0.9, 0.9);
+        transform: scale3d(0.9, 0.9, 0.9);
+    }
+
+    60% {
+        opacity: 1;
+        -webkit-transform: scale3d(1.03, 1.03, 1.03);
+        transform: scale3d(1.03, 1.03, 1.03);
+    }
+
+    80% {
+        -webkit-transform: scale3d(0.97, 0.97, 0.97);
+        transform: scale3d(0.97, 0.97, 0.97);
+    }
+
+    to {
+        opacity: 1;
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
+    }
+
+@keyframes bounceIn {
+    from,
+    20%,
+    40%,
+    60%,
+    80%,
+    to {
+        -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+        animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+
+    0% {
+        opacity: 0;
+        -webkit-transform: scale3d(0.3, 0.3, 0.3);
+        transform: scale3d(0.3, 0.3, 0.3);
+    }
+
+    20% {
+        -webkit-transform: scale3d(1.1, 1.1, 1.1);
+        transform: scale3d(1.1, 1.1, 1.1);
+    }
+
+    40% {
+        -webkit-transform: scale3d(0.9, 0.9, 0.9);
+        transform: scale3d(0.9, 0.9, 0.9);
+    }
+
+    60% {
+        opacity: 1;
+        -webkit-transform: scale3d(1.03, 1.03, 1.03);
+        transform: scale3d(1.03, 1.03, 1.03);
+    }
+
+    80% {
+        -webkit-transform: scale3d(0.97, 0.97, 0.97);
+        transform: scale3d(0.97, 0.97, 0.97);
+    }
+
+    to {
+        opacity: 1;
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
+    }
+

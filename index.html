@@ -1,20 +1,31 @@
+<!DOCTYPE html>
 <html>
     <head>
-        
+        <meta charset="UTF-8">
+        <title>CLASSIC TOON TRIVIA</title>
+        <link rel="stylesheet" href="assets/scripts/reset.css">
+
+        <link href="https://fonts.googleapis.com/css?family=Bowlby+One|Bubblegum+Sans|Carter+One|Erica+One|Fascinate|Fontdiner+Swanky|Lilita+One|Rammetto+One|Sigmar+One|Suez+One" rel="stylesheet">
+        <!-- MAKE SURE THIS IS LAST-->
+        <link rel="stylesheet" type="text/css" href="assets/scripts/style.css">
+
     </head>
 
     <body>
         <div class="titleImage">
+            <div class="ourQuizTitle"><img id= "titleCardPng" src="assets/images/titlecard.png"><div id="popInFace"><img src="assets/images/facepopin.png" id="facePopper" class="bounceIn"></div></div>
             <div class="rulesText"></div>
-            <div class="startButton"></div>
+            <div class="startButton"><div id="clickThru">CLICK HERE TO BEGIN</div></div>
         </div>
         <div class="gamePlay">
             <div class="topGamebar">
                 <div class="faceImage"></div>
-                <div class="question"></div>
+                <div class="questionText"></div>
+                <br>
+                <div class="questionNumber"></div>
             </div>
             <div class="timeBar">
-                <div class="extendingTimeBar"></div>
+                <div id="extendingTimeBar"><div></div></div>
             </div>
             <div class="answer">
                 <div class="answerTextButton aValue" value="a"></div>
@@ -23,15 +34,15 @@
                 <div class="answerTextButton dValue" value="d"></div>
             </div>
         </div>
-        <div class="solution">
+        <div class="gameSolution">
             <div class="theCorrectAnswer"></div>
         </div>
-        <div class="gameScore">
+        <div class="gameFinalScore">
             <div class="finalScore"></div>
             <div class="playAgainButton"></div>
         </div>
 
-
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
         <script type="text/javascript">
             //CLASSIC ANIMATION TRIVIA GAME
             var questions = [
@@ -88,7 +99,7 @@
                     a:'Donald',
                     b:'Daffy',
                     c:'Scrooge',
-                    d:'Humberto',
+                    d:'il Ducke',
                     correctAnswer:'a'
                 },
                 {
@@ -119,16 +130,30 @@
 
                 var timerBarNumber = 20000;                             //for use for the bar
                 var questionNumber = 0;                                 //which part of the question arrary are we on
-                var gameIsPlaying = false;                              //are we accepting input currently
+                var gameIsTakingInput = false;                              //are we accepting input currently
                 var gameIsFinished = false;                             //is the game done running
                 var answersCorrect = 0;                                 //number of correct answers
                 var gameIntro = true;                                   //game intro needs to be played
+                var currentTriviaQuestion = questions[9];
+                var messages = {
+                    right: "Nice job!",
+                    wrong: "Sorry, incorrect.",
+                    timeOut: "You didn't answer in time!",
+                    gameFinished: "That was the last question!"
+                }
+                var numberOfQuestions = questions.length;
 
                 console.log(questions[1].correctAnswer);
                 console.log(questions[0].c);
                 console.log(questions[9]);
                 console.log(questions.length);
-                
+                console.log(currentTriviaQuestion);
+
+                $('.gamePlay').css('display','none');
+                $('.gameScore').css('display','none');
+                $('.gameFinalScore').css('display','none');
+
+
                 //NICE! This appears to be the correct format for doing this. Time to do some blocking and assets,
                 //with this correct everything else is just blocking, intervals and assets
 
@@ -145,12 +170,117 @@
                 //              -IF CORRECT, ADD TO THE answersCorrect, DISPLAY "CORRECT" in theCorrectAnswer DIV
                 //              -IF NOT CORRECT, DISPLAY 'INCORRECT' in theCorrectAnswer DIV
                 //      -REPEAT 10 TIMES (or questions.length);
+  
+                //      FOR THE PURPOSES OF THIS LOOP, THE ACTUAL FOR LOOP MAY BE INTHE MAIN GAME FUNCTION AND THE INDIVIDUAL ROUNDS MAY BE IN THEIR OWN 
+
                 //      -AFTER FINAL QUESTION DISPLAY HIDE ALL OF THE THINGS
                 //      -REVEAL SUMMARY SCREEN AND RESET
 
                 //      -ONCLICK FUNCTION (NOT SURE HOW THIS IS GOING TO WORK WITH THE TIMING INTERVALS AND INTERRUPTIONS)
 
+                function gameIntroCard() {
+
+                }
+
+
+                function newgame () {
+
+                    gameIntro = false;
+                    answersCorrect = 0;
+                    questionNumber = 0;
+                    gameIsFinished = false; 
+                    gameIsTakingInput = false;
+                    currentTriviaQuestion = questions[0];
+                    askQuestions();
+
+                }
+
+                function questionTimer(){
+
+                }
+
+                function askQuestions() {
+                    currentTriviaQuestion = questions[questionNumber];
+                    $('.titleImage').css('display', 'none');
+                    $('.gamePlay').css('display','block');
+                    $('.questionText').html(currentTriviaQuestion.question);
+                    $('.aValue').html(currentTriviaQuestion.a);
+                    $('.bValue').html(currentTriviaQuestion.b);
+                    $('.cValue').html(currentTriviaQuestion.c);
+                    $('.dValue').html(currentTriviaQuestion.d);
+                    gameIsTakingInput = true;
+                    // questionTimer();
+                    progress(20, 20, $('#extendingTimeBar'));
+                }
+
+                function answerSheet(answer) {
+                    // or maybe correctcard or wrongcard
+                    if (answer === 'right') {
+                        console.log("we hit the right answer");
+                        }
+                    if (answer === 'wrong') {
+
+                    }
+                    if (answer === 'timeup'){
+
+                    }
+                    
+                }
+                
+                //this might be the trickiest function I've written, and it's solely for making the timer bar animate pretty
+                //I found most of the blocking for this jquery on a jsfiddle for a stackoverflow answer (that wasn't chosen as the correct answer)
+                
+
+                function progress(timeleft, timetotal, $element) {
+
+                    var progressBarWidth = timeleft * $element.width() / timetotal;
+                    $element.find('div').animate({ width: progressBarWidth }, timeleft == timetotal ? 0 : 1000, 'linear').html(timeleft+"&nbsp");
+                    
+                    if(timeleft > 0) {
+
+                        setTimeout(function() {
+                            progress(timeleft - 1, timetotal, $element);
+                        }, 1000);
+
+                    }
+                };
+
+                //REWRITE ABOVE SO IT FITS WITH YOUR CODE BETTER, DUMMY
+
+                //registers the click to start the game
+
+                $('#clickThru').on('click', function() {
+
+                    newgame();
+
+                });
+
+                //registers the input from a buttonclick
+                $('.answerTextButton').on('click', function() {
+                    
+                    if (gameIsTakingInput = true){
+
+                        var buttonClick = $(this).attr("value");
+                        console.log(buttonClick);
+                        console.log(currentTriviaQuestion.correctAnswer);
+                        if (buttonClick == currentTriviaQuestion.correctAnswer) {
+                            answerSheet('right'); //these probably don't need to be functions, as they're only going to get called here
+                            console.log("RIGHT!");
+                        } else {
+                            // answerSheet(wrong);
+                            console.log("WRONG!");
+                        }
+
+
+                    }
+                });
+                
+                  
+
+
         </script>
+
+
 
     </body>
 </html>
