@@ -97,6 +97,9 @@ body {
     visibility: visible;
 }
 
+audio {
+    display:none;
+}
 /*these are the individual element styles*/
 
 .ourQuizTitle {
@@ -110,7 +113,7 @@ body {
     background: black;
     color: white;
     border-width: 2px;
-    border-color: #60070d;
+    border-color: white;
     border-style: solid;
     border-radius: 5px;
     padding: 10px;
@@ -149,7 +152,7 @@ body {
     color: white;
     border-style: solid;
     border-width: 2px;
-    border-color: #60070d;
+    border-color: white;
     font-size: 24pt;
     padding: 20px;
     margin-top: 30px;
@@ -159,6 +162,27 @@ body {
     border-radius: 5px;
     min-width: 80%;
     min-height: 120px;
+    text-align: center;
+    font-family: 'Lilita One', cursive;
+}
+
+.gameSolution {
+    /* background: black; */
+    color: white;
+    /* border-style: solid;
+    border-width: 2px;
+    border-color: white; */
+    font-size: 24pt;
+    padding: 20px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    margin-left: 10%;
+    margin-right: 10%;
+    border-radius: 5px;
+    min-width: 80%;
+    min-height: 40%;
+    max-height: 60%;
+    overflow: visible;
     text-align: center;
     font-family: 'Lilita One', cursive;
 }
@@ -174,6 +198,7 @@ body {
     border-top-width: 2px;
     min-height: 48px;
     margin-bottom: 15px;
+    overflow: visible;
 }
 
 #extendingTimeBar{
@@ -181,7 +206,7 @@ body {
     height: 40px;
     margin-top: 4px;
     margin-bottom: 4px;
-    background: black;
+    background: white;
 
 }
 
