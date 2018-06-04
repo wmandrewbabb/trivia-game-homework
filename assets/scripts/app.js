@@ -318,7 +318,7 @@ $(document).ready(function() {
 
         //All of these are for the music playing
 
-        var isMusicMuted = true;
+        var isMusicMuted = false;
         var titleCardShowing = false;
         var answersCardShowing = false;
         var questionCardShowing = false;
@@ -333,11 +333,18 @@ $(document).ready(function() {
 
         function gameIntroCard() {
       
-            //Okay, it seems that chrome has updated and prevents autoplaying music if something hasn't interacted
-            //to solve this (since I want intro music to play on quiz start) I'm thinking of organizing things this way
-            // START/LOAD SCREEN/READY? --> GOES TO ASK QUESTION --> IF, IN ASKQUESTION, gameIntro == TRUE, play titleCard function (which does the intro)
-            //& sets gameIntro = FALSE, then calls ASKQUESTION again, which now proceeds through normal play
-            
+            if (gameIntro == false) { newgame(); 
+            } else {
+
+                $(window).on('click', function() {
+
+                    $('.loadingCard').css('display','none');
+                    if (gameIntro == true) {
+                    newgame();
+                    console.log("IS THIS IDIOT THING TRIGGERING");
+                    }
+                });
+            }
         }
     
 
@@ -357,7 +364,7 @@ $(document).ready(function() {
 
             if (isMusicMuted==false) {
                 openingMusic.load();
-                openingMusic.volume = 0.2;
+                openingMusic.volume = 0.3;
                 setTimeout(function(){openingMusic.play();}, 1000);
             }
 
@@ -371,7 +378,7 @@ $(document).ready(function() {
             questionCardShowing = true;
             if (isMusicMuted==false) {
                 questionMusic.load();
-                questionMusic.volume = 0.01; //waaaay more irritating then I thought it'd be -- maybe do a toggle?
+                questionMusic.volume = 0.3; //waaaay more irritating then I thought it'd be -- maybe do a toggle?
                 questionMusic.play();
             }
                 //DEEP BREATH THIS MAY GET TRICKY
@@ -459,7 +466,7 @@ $(document).ready(function() {
             if (isMusicMuted==false) {
                 closingMusic.load();
                 closingMusic.play();
-                closingMusic.volume = 0.2;
+                closingMusic.volume = 0.3;
             }
 
             $('.gameSolution, .titleImage, .gamePlay').css('display','none');
@@ -471,13 +478,13 @@ $(document).ready(function() {
         //registers the click to start the game
 
         $('#clickThru').on('click', function() {
-
+            $('.titleImage').css('display','none');
+            console.log("TITLE SHOULD DISAPPEAR NOW");
+            $('#facePopper').css('display','none').removeClass('bounceIn');
             askQuestions();
             openingMusic.pause();
-            console.log('this should be paused now'); //stupid google stupid chrome stupid new autoplay rules
             titleCardShowing = false;
             clearInterval(popFaceInterval);
-            $('#facePopper').css('display','none').removeClass('bounceIn');
         });
 
         //registers the input from a buttonclick on an answer
@@ -524,13 +531,13 @@ $(document).ready(function() {
                 isMusicMuted = false;
                 if (answersCardShowing == true) {closingMusic.play();}
                 if (titleCardShowing == true) {openingMusic.play();}
-                if (questionCardShowing == true) {questionMusic.play(); questionMusic.volume = 0.01;}
+                if (questionCardShowing == true) {questionMusic.play(); questionMusic.volume = 0.3;}
 
             }
 
         });
 
-    newgame();
+    gameIntroCard();
 
 
 });
