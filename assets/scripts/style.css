@@ -10,7 +10,12 @@ font-family: 'Fascinate', cursive;
 font-family: 'Erica One', cursive; */
 
 body {
-    background: black;
+    /* background: black; */
+    background:  #b44811;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background: radial-gradient(circle at center, #03152b 0%,#010914 17%,#c45714 17%,#670003 27%,#c54c13 27%,#60070d 39%,#b0410c 39%,#490407 54%,#8d4009 54%,#3c040d 74%,#6e2a07 74%,#2b0208 94%,#481a02 94%,#481a02 94%,#2f010b 100%);
 }
 
 /* these are our four main gameplay divs that will be toggled */
@@ -20,8 +25,10 @@ body {
     height: 100vh;
     text-align: center;
     display: table;
-    background:  #b44811;
-    background: radial-gradient(circle at center, #03152b 0%,#010914 17%,#c45714 17%,#670003 27%,#c54c13 27%,#60070d 39%,#b0410c 39%,#490407 54%,#8d4009 54%,#3c040d 74%,#6e2a07 74%,#2b0208 94%,#481a02 94%,#481a02 94%,#2f010b 100%);
+    /* background:  #b44811;
+    background-attachment: fixed;
+    background-size: cover;
+    background: radial-gradient(circle at center, #03152b 0%,#010914 17%,#c45714 17%,#670003 27%,#c54c13 27%,#60070d 39%,#b0410c 39%,#490407 54%,#8d4009 54%,#3c040d 74%,#6e2a07 74%,#2b0208 94%,#481a02 94%,#481a02 94%,#2f010b 100%); */
     position: relative;
     display: block;
     visibility: visible;
@@ -45,6 +52,7 @@ body {
     top:50%;
     margin-left:-130px;
     margin-top:-160px;
+    display: none;
 }
 
 .bounceIn {
@@ -56,11 +64,6 @@ body {
     animation-fill-mode: both;
 }
 
-#titleCardPng {
-    margin:0 auto;
-    width: 90%;
-    margin-top: 15%;
-}
 
 #clickThru {
     position: absolute;
@@ -74,13 +77,11 @@ body {
 }
 
 .gamePlay {
-    background:  #b44811;
     display: none;
     visibility: visible;
 }
 
 .solution {
-    background:  #b44811;
     display: none;
     visibility: visible;
 }
@@ -90,9 +91,7 @@ body {
     height: 100vh;
     text-align: center;
     display: table;
-    background:  #b44811;
-    background: radial-gradient(circle at center, #03152b 0%,#010914 17%,#c45714 17%,#670003 27%,#c54c13 27%,#60070d 39%,#b0410c 39%,#490407 54%,#8d4009 54%,#3c040d 74%,#6e2a07 74%,#2b0208 94%,#481a02 94%,#481a02 94%,#2f010b 100%);
-    position: relative;
+    position: relative; 
     display: none;
     visibility: visible;
 }
@@ -103,11 +102,37 @@ body {
     text-align: center;
     color: white;
     display: table;
-    background:  #b44811;
-    background: radial-gradient(circle at center, #03152b 0%,#010914 17%,#c45714 17%,#670003 27%,#c54c13 27%,#60070d 39%,#b0410c 39%,#490407 54%,#8d4009 54%,#3c040d 74%,#6e2a07 74%,#2b0208 94%,#481a02 94%,#481a02 94%,#2f010b 100%);
-    position: relative;
+    position: absolute;
     display: none;
     visibility: visible;
+    background:  #b44811;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background: radial-gradient(circle at center, #03152b 0%,#010914 17%,#c45714 17%,#670003 27%,#c54c13 27%,#60070d 39%,#b0410c 39%,#490407 54%,#8d4009 54%,#3c040d 74%,#6e2a07 74%,#2b0208 94%,#481a02 94%,#481a02 94%,#2f010b 100%);
+}
+
+.finalScore {
+    margin: 0 auto;
+    margin-top: 25vh;
+    width: 100%;
+    font-size: 24pt;
+    font-family: 'Suez One', serif;
+    text-align: center; 
+    text-shadow: black 3px 3px;
+}
+
+.playAgainButton {
+    margin: 0 auto;
+    position: absolute;
+    width: 100%;
+    bottom: 25vh;
+    height: 5vh;
+    font-size: 5vh;
+    font-family: 'Sigmar One', cursive;
+    text-align: center;
+    color: white;
+    text-shadow: black 3px 3px;
 }
 
 audio {
@@ -130,12 +155,14 @@ audio {
     border-style: solid;
     border-radius: 15px;
     padding: 10px;
+    margin: 0 auto;
     margin-top: 5px;
     margin-bottom: 5px;
     margin-left: 20%;
     margin-right: 20%;
     float: left;
     min-width: 60%;
+    max-width: 60%;
     font-size: 24pt;
     text-align: center;
     font-family: 'Sigmar One', cursive;
@@ -151,8 +178,6 @@ audio {
     height: 100vh;
     text-align: center;
     display: table;
-    background:  #b44811;
-    background: radial-gradient(circle at center, #03152b 0%,#010914 17%,#c45714 17%,#670003 27%,#c54c13 27%,#60070d 39%,#b0410c 39%,#490407 54%,#8d4009 54%,#3c040d 74%,#6e2a07 74%,#2b0208 94%,#481a02 94%,#481a02 94%,#2f010b 100%);
     padding-top: 10px;
 }
 
@@ -173,18 +198,13 @@ audio {
     margin-left: 10%;
     margin-right: 10%;
     border-radius: 15px;
-    min-width: 80%;
     min-height: 120px;
     text-align: center;
     font-family: 'Lilita One', cursive;
 }
 
 .gameSolution {
-    /* background: black; */
     color: white;
-    /* border-style: solid;
-    border-width: 2px;
-    border-color: white; */
     font-size: 24pt;
     padding: 20px;
     margin-top: 30px;
@@ -202,8 +222,25 @@ audio {
 
 #answerImage {
     width: 80%;
-    margin-left: 10%;
-    margin-right: 10%;
+    margin: 0 auto;
+    /* margin-left: 10%;
+    margin-right: 10%; */
+}
+
+.muteButton {
+    height: 0%;
+    position: absolute;
+    bottom: 50px;
+    right: 50px;
+    height: 15px;
+    width: auto;
+    color: white;
+    z-index: 10;
+}
+
+.muteButtonImage {
+    height: 45px;
+    width: auto;
 }
 
 .timeBar {
@@ -241,7 +278,25 @@ audio {
     box-sizing: border-box;
     line-height: 34px;
     font-size: 44px;
-  }
+}
+
+#titleCardPng {
+    margin:0 auto;
+    width: 90%;
+    height: auto;
+    position: relative;
+    margin-top: 15%;
+    -webkit-animation: wipe 1s linear forwards;		
+    -webkit-mask-size: 2000px 1000px;
+    -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,1) 45%,rgba(255,255,255,0) 48%,rgba(255,255,255,0) 100%);
+
+}
+
+@-webkit-keyframes wipe {
+	from { -webkit-mask-position: 1000px 0px; }
+	to { -webkit-mask-position: 2000px 0px; }
+}
+
 
 @-webkit-keyframes bounceIn {
     from,
@@ -333,3 +388,30 @@ audio {
     }
     }
 
+@media screen and (max-width: 768px) {
+
+    .questionText {
+        font-size: 14pt;
+        text-align: center;
+        font-family: 'Lilita One', cursive;
+        min-height: 80px;
+
+    }
+    
+    .gameSolution {
+        font-size: 14pt;
+        overflow: visible;
+        text-align: center;
+        font-family: 'Lilita One', cursive;
+    }
+
+    .answerTextButton {
+        font-size: 14pt;
+        text-align: center;
+        font-family: 'Sigmar One', cursive;
+    }
+
+
+
+
+}
