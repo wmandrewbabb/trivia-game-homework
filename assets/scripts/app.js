@@ -181,7 +181,7 @@ $(document).ready(function() {
             isAnswered: false,
             answerExplanation: "'Silly Symphonies' was Disney's initial line of color shorts and introdced Disney renditions of characters like the Three Little Pigs."
         },
-        // {
+        // {                                          //I'm still writing some questions
         //     question:'',
         //     a:'',
         //     b:'',
@@ -415,14 +415,18 @@ $(document).ready(function() {
         var numberOfQuestions = 10;                             //number of questions in one game
         var pauseInterval = 5000;                               //using this for pause timers so i don't have to edit them all
         var difficultyMeasure = 2;                              //Ideally, this will be adjusted based on how well the player is doing and should result in easier questions if they're doing poorly
-
-        //All of these are for the music playing
-
-        var isMusicMuted = false;
-        var titleCardShowing = false;
         var answersCardShowing = false;
         var questionCardShowing = false;
         var intervalId;
+
+        //All of these variables are for the music playing
+
+        var isMusicMuted = false;
+        var titleCardShowing = false;
+
+
+        //I could have probably just done one of these and used getElementByID or perhaps the .attr('src') method... but didn't think about it
+
         var openingMusic = document.getElementById("titleAudio");
         var questionMusic = document.getElementById("gameAudio");
         var closingMusic = document.getElementById("finishAudio");
@@ -482,7 +486,7 @@ $(document).ready(function() {
             questionCardShowing = true;
             if (isMusicMuted==false) {
                 questionMusic.load();
-                questionMusic.volume = 0.3; //waaaay more irritating then I thought it'd be -- maybe do a toggle?
+                questionMusic.volume = 0.3;
                 questionMusic.play();
             }
                 //DEEP BREATH THIS MAY GET TRICKY
@@ -593,6 +597,7 @@ $(document).ready(function() {
         });
 
         //registers the input from a buttonclick on an answer
+
         $('.answerTextButton').on('click', function() {
             
             if (gameIsTakingInput = true){
@@ -605,8 +610,6 @@ $(document).ready(function() {
                 } else {
                     answerSheet('wrong');
                 }
-
-
             }
         });
 

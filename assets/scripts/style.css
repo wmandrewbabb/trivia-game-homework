@@ -9,6 +9,8 @@ font-family: 'Bowlby One', cursive;
 font-family: 'Fascinate', cursive;
 font-family: 'Erica One', cursive; */
 
+/*reminder: clear out the fonts you don't need at the end of this */
+
 body {
     /* background: black; */
     background:  #b44811;
@@ -100,11 +102,11 @@ body {
 }
 
 .rotating {
-    -webkit-animation: rotating 2s linear infinite;
-    -moz-animation: rotating 2s linear infinite;
-    -ms-animation: rotating 2s linear infinite;
-    -o-animation: rotating 2s linear infinite;
-    animation: rotating 2s linear infinite;
+    -webkit-animation: rotating 4s linear infinite;
+    -moz-animation: rotating 4s linear infinite;
+    -ms-animation: rotating 4s linear infinite;
+    -o-animation: rotating 4s linear infinite;
+    animation: rotating 4s linear infinite;
 }
 
 
@@ -192,7 +194,6 @@ body {
 audio {
     display:none;
 }
-/*these are the individual element styles*/
 
 .ourQuizTitle {
     margin-top: 20vh;
