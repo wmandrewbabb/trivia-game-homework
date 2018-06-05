@@ -151,6 +151,56 @@ $(document).ready(function() {
             isAnswered: false,
             answerExplanation: "The film's pre-civil rights era depiction of black stereotypes and idyllic plantation life have led to Disney never releasing it on any home format in the United States."
         },
+        {
+            question:'This man was the voice of Bugs Bunny, Daffy Duck, Porky Pig, Tweety Bird, Sylvester, Yosemite Sam, Foghorn Leghorn, Marvin the Martian, Pepe Le Pew, Speedy Gonzales, and many others.',
+            a:'Frank Welker',
+            b:'Chuck Jones',
+            c:'Tim Allen',
+            d:'Mel Blanc',
+            correctAnswer:'d',
+            isAnswered: false,
+            answerExplanation: "Mel Blanc spent over sixty years voicing practically all of the Warner Bros. cartoon characters."
+        },
+        {
+            question:'This voice actor is as of 2018 on the box office earnings all-time chart as #3, yet no one is likely to recognize his face.',
+            a:'Stan Lee',
+            b:'Hugo Weaving',
+            c:'Frank Welker',
+            d:'Mel Blanc',
+            correctAnswer:'c',
+            isAnswered: false,
+            answerExplanation: "Frank Welker is a legendary voice actor, capable of sounding like hundreds of different distinct characters and animals."
+        },
+        {
+            question:'The director of King Kong, Merian C. Cooper, watched one of these short films and declared that he never wanted to make a black-and-white picture again:',
+            a:"Disney's Silly Symphonies",
+            b:"Warner Bros.' Merrie Melodies",
+            c:"MGM's Jaunty Jokers",
+            d:"RKO's Fractured Fairytales",
+            correctAnswer:'a',
+            isAnswered: false,
+            answerExplanation: "'Silly Symphonies' was Disney's initial line of color shorts and introdced Disney renditions of characters like the Three Little Pigs."
+        },
+        // {
+        //     question:'',
+        //     a:'',
+        //     b:'',
+        //     c:'',
+        //     d:'',
+        //     correctAnswer:'a',
+        //     isAnswered: false,
+        //     answerExplanation: ""
+        // },
+        // {
+        //     question:'',
+        //     a:'',
+        //     b:'',
+        //     c:'',
+        //     d:'',
+        //     correctAnswer:'a',
+        //     isAnswered: false,
+        //     answerExplanation: ""
+        // },
     ];
 
     var questionsEasy = [
@@ -304,6 +354,56 @@ $(document).ready(function() {
             isAnswered: false,
             answerExplanation: 'The Simpsons is also the longest running scripted prime time television series, period. 29 seasons and still in production.'
         },
+        {
+            question:'What celestial body is Marvin the Martian usually trying to blow up?',
+            a:'The Moon',
+            b:'Mars',
+            c:'Toontown',
+            d:'Earth',
+            correctAnswer:'d',
+            isAnswered: false,
+            answerExplanation: "Marvin tries to blow up the Earth, which generally is seen as a bad thing to happen for the people living there."
+        },
+        {
+            question:"Disney's first full length color animated feature was this film:",
+            a:'Robin Hood',
+            b:'A Troll in Central Park',
+            c:'Snow White',
+            d:'Cinderella',
+            correctAnswer:'c',
+            isAnswered: false,
+            answerExplanation: "Snow White was originally released in 1937, and was so popular it was re-released regularly in theatres until the advent of home video."
+        },
+        // {
+        //     question:'',
+        //     a:'',
+        //     b:'',
+        //     c:'',
+        //     d:'',
+        //     correctAnswer:'a',
+        //     isAnswered: false,
+        //     answerExplanation: ""
+        // },
+        // {
+        //     question:'',
+        //     a:'',
+        //     b:'',
+        //     c:'',
+        //     d:'',
+        //     correctAnswer:'a',
+        //     isAnswered: false,
+        //     answerExplanation: ""
+        // },
+        // {
+        //     question:'',
+        //     a:'',
+        //     b:'',
+        //     c:'',
+        //     d:'',
+        //     correctAnswer:'a',
+        //     isAnswered: false,
+        //     answerExplanation: ""
+        // },
     ];
 
         var questionNumber = 0;                                 //which part of the question arrary are we on
@@ -336,12 +436,11 @@ $(document).ready(function() {
             if (gameIntro == false) { newgame(); 
             } else {
 
-                $(window).on('click', function() {
+                $('.loadingCard').on('click', function() {
 
                     $('.loadingCard').css('display','none');
                     if (gameIntro == true) {
                     newgame();
-                    console.log("IS THIS IDIOT THING TRIGGERING");
                     }
                 });
             }
@@ -472,14 +571,13 @@ $(document).ready(function() {
             $('.gameSolution, .titleImage, .gamePlay').css('display','none');
             $('.aValue, .bValue, .cValue, .dValue').css('display', 'block');
             $('.gameFinalScore').css('display','block');
-            $('.finalScore').text('You Answered ' + answersCorrect + ' out of ' + numberOfQuestions + ' correctly');
+            $('.finalScore').text('You Answered ' + answersCorrect + ' out of ' + numberOfQuestions + ' correctly!');
         }
 
         //registers the click to start the game
 
         $('#clickThru').on('click', function() {
             $('.titleImage').css('display','none');
-            console.log("TITLE SHOULD DISAPPEAR NOW");
             $('#facePopper').css('display','none').removeClass('bounceIn');
             askQuestions();
             openingMusic.pause();
