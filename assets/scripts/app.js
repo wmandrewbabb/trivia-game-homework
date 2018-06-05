@@ -69,7 +69,7 @@ $(document).ready(function() {
             d:'il Ducke',
             correctAnswer:'a',
             isAnswered: false,
-            answerExplanation: 'The bellicose dictator was always fun of the difficult to understand but always verbose Donald Duck.'
+            answerExplanation: 'The bellicose dictator was fond of the difficult to understand but always verbose Donald Duck, despite Donald being a very visible part of American propaganda in WW2.'
         },
         {
             question:'In addition to Bugs, Daffy, and Porky, this creator also contributed to the creation of Droopy Dog and Screwy Squirrel:',
@@ -433,14 +433,19 @@ $(document).ready(function() {
 
         function gameIntroCard() {
       
-            if (gameIntro == false) { newgame(); 
+            if (gameIntro == false) { 
+
+                newgame(); 
+
             } else {
 
                 $('.loadingCard').on('click', function() {
 
                     $('.loadingCard').css('display','none');
                     if (gameIntro == true) {
+
                     newgame();
+
                     }
                 });
             }
@@ -516,6 +521,7 @@ $(document).ready(function() {
             $('.cValue').html(currentTriviaQuestion.c);
             $('.dValue').html(currentTriviaQuestion.d);
             gameIsTakingInput = true;
+            $('#extendingTimeBar').stop(true, true);
             $('#extendingTimeBar').css('width','0%');
             $('#extendingTimeBar').animate({width: "100%"}, 20000, 'linear');
             intervalId = setInterval(function(){answerSheet('timeup');}, 20000);
@@ -530,6 +536,7 @@ $(document).ready(function() {
             $('.gameSolution').css('display','block');
             $('#extendingTimeBar').stop(true, true);
             $('#extendingTimeBar').css('width','100%');
+            $('#extendingTimeBar').animate({width: "0%"}, 5000, 'linear');
             $('.questionText').html(currentTriviaQuestion.answerExplanation);
 
             if (answer === 'right') {
