@@ -162,7 +162,7 @@ $(document).ready(function() {
             answerExplanation: "Mel Blanc spent over sixty years voicing practically all of the Warner Bros. cartoon characters."
         },
         {
-            question:'This voice actor is as of 2018 on the box office earnings all-time chart as #3, yet no one is likely to recognize his face.',
+            question:'This voice actor is third on the chart of all-time box office earnings as of 2018, yet no one is likely to recognize his face.',
             a:'Stan Lee',
             b:'Hugo Weaving',
             c:'Frank Welker',
@@ -477,7 +477,6 @@ $(document).ready(function() {
             }
 
             $('.titleImage').css('display','block');
-            popFaceInterval = setInterval(function(){ $('#facePopper').css('display', 'block').addClass('bounceIn'); }, pauseInterval);
             $('.gameFinalScore').css('display','none');
 
         }
@@ -582,6 +581,7 @@ $(document).ready(function() {
             $('.gameSolution, .titleImage, .gamePlay').css('display','none');
             $('.aValue, .bValue, .cValue, .dValue').css('display', 'block');
             $('.gameFinalScore').css('display','block');
+            popFaceInterval = setInterval(function(){ $('#facePopper').css('display', 'block').addClass('bounceIn'); }, pauseInterval);
             $('.finalScore').text('You Answered ' + answersCorrect + ' out of ' + numberOfQuestions + ' correctly!');
         }
 
@@ -593,7 +593,6 @@ $(document).ready(function() {
             askQuestions();
             openingMusic.pause();
             titleCardShowing = false;
-            clearInterval(popFaceInterval);
         });
 
         //registers the input from a buttonclick on an answer
@@ -617,6 +616,7 @@ $(document).ready(function() {
 
             answersCardShowing = false;
             closingMusic.pause();
+            clearInterval(popFaceInterval);
             newgame();
 
         });

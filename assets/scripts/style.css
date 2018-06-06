@@ -49,14 +49,14 @@ body {
     text-align: center;
     font-size: 96px;
     line-height: 8px; */ /*leaving this in case I need it again later */
-    height:300px;
-    width: 280px;
+    height:280px;
+    width: 262px;
     margin:0 auto;
     position:absolute;
     left:50%;
     top:50vh;
-    margin-left:-140px;
-    margin-top:-160px;
+    margin-left:-131px;
+    margin-top:-155px;
     display: none;
     z-index: 2;
 }
@@ -170,7 +170,7 @@ body {
 
 .finalScore {
     margin: 0 auto;
-    margin-top: 25vh;
+    margin-top: 21vh;
     width: 100%;
     font-size: 24pt;
     font-family: 'Suez One', serif;
@@ -182,7 +182,7 @@ body {
     margin: 0 auto;
     position: absolute;
     width: 100%;
-    bottom: 25vh;
+    bottom: 21vh;
     height: 5vh;
     font-size: 5vh;
     font-family: 'Sigmar One', cursive;
@@ -213,7 +213,7 @@ audio {
     margin: 0 auto;
     margin-top: 5px;
     margin-bottom: 5px;
-    margin-left: 20%;
+    margin-left: 19%;
     margin-right: 20%;
     float: left;
     min-width: 60%;
@@ -268,7 +268,7 @@ audio {
     margin-right: 10%;
     border-radius: 5px;
     min-width: 80%;
-    min-height: 40%;
+    min-height: 40%;    
     max-height: 60%;
     overflow: visible;
     text-align: center;
@@ -278,8 +278,8 @@ audio {
 #answerImage {
     width: 80%;
     margin: 0 auto;
-    /* margin-left: 10%;
-    margin-right: 10%; */
+    margin-left: 5%;
+    margin-right: 10%;
 }
 
 .muteButton {
@@ -515,7 +515,7 @@ audio {
 
     #clickThru {
         position: absolute;
-        bottom: 175px;
+        bottom: 15vh;
         font-size: 24px;
         text-align: center;
         color: white;
@@ -576,7 +576,7 @@ audio {
 
     #clickThru {
         position: absolute;
-        bottom: 175px;
+        bottom: 15vh;
         font-size: 24px;
         text-align: center;
         color: white;
