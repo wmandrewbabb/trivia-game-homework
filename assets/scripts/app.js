@@ -19,7 +19,7 @@ $(document).ready(function() {
             d:'He-man and the Masters of the Universe', 
             correctAnswer:'b',
             isAnswered: false,
-            answerExplanation: 'Merrie Melodies was originally meant to more musical shorts, but eventually became indistingushable from Looney Tunes, featuring many of the same characters.'
+            answerExplanation: 'Merrie Melodies was originally meant to be more musical shorts, but eventually became indistingushable from Looney Tunes, featuring many of the same characters.'
         },
         {
             question:'Prior to Mickey Mouse, what other cartoon mascot did Walt Disney create?',
