@@ -73,7 +73,7 @@ body {
 .loadingCard {
     min-height: 100vh;
     width: 100%;
-    background-attachment: fixed;
+    /* background-attachment: fixed; */
     background-repeat: no-repeat;
     background-size: cover;
     background: radial-gradient(circle at center, #03152b 0%,#010914 17%,#c4c4c4 17%,#535353 27%,#c1c1c1 27%,#595959 39%,#a8a8a8 39%,#3f3f3f 54%,#878787 54%,#353535 74%,#606060 74%,#212121 94%,#3d3d3d 94%,#383838 94%,#1e1e1e 100%);
