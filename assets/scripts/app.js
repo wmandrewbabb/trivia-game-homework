@@ -191,16 +191,6 @@ $(document).ready(function() {
         //     isAnswered: false,
         //     answerExplanation: ""
         // },
-        // {
-        //     question:'',
-        //     a:'',
-        //     b:'',
-        //     c:'',
-        //     d:'',
-        //     correctAnswer:'a',
-        //     isAnswered: false,
-        //     answerExplanation: ""
-        // },
     ];
 
     var questionsEasy = [
@@ -384,26 +374,6 @@ $(document).ready(function() {
         //     isAnswered: false,
         //     answerExplanation: ""
         // },
-        // {
-        //     question:'',
-        //     a:'',
-        //     b:'',
-        //     c:'',
-        //     d:'',
-        //     correctAnswer:'a',
-        //     isAnswered: false,
-        //     answerExplanation: ""
-        // },
-        // {
-        //     question:'',
-        //     a:'',
-        //     b:'',
-        //     c:'',
-        //     d:'',
-        //     correctAnswer:'a',
-        //     isAnswered: false,
-        //     answerExplanation: ""
-        // },
     ];
 
         var questionNumber = 0;                                 //which part of the question arrary are we on
@@ -488,7 +458,6 @@ $(document).ready(function() {
                 questionMusic.volume = 0.3;
                 questionMusic.play();
             }
-                //DEEP BREATH THIS MAY GET TRICKY
 
             if(difficultyMeasure > 0) {
 
@@ -513,8 +482,6 @@ $(document).ready(function() {
                 currentTriviaQuestion = questionsEasy[aNum];
 
             }
-
-                //SPOILER: THAT WAS WAY LESS TRICKY THAN I THOUGHT I WOULD BE
 
             $('.titleImage').css('display', 'none');
             $('.gamePlay').css('display','block');
