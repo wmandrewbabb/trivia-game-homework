@@ -461,8 +461,8 @@ audio {
         font-size: 14pt;
         text-align: center;
         font-family: 'Sigmar One', cursive;
-        margin-top: 15px;
-        margin-bottom: 15px;
+        margin-top: 7px;
+        margin-bottom: 7px;
         padding: 15px;
 
     }
@@ -471,7 +471,7 @@ audio {
         height: 0%;
         position: absolute;
         bottom: 45px;
-        right: 30px;
+        right: 5px;
         height: 15px;
         width: auto;
         color: white;
@@ -522,8 +522,8 @@ audio {
         font-size: 14pt;
         text-align: center;
         font-family: 'Sigmar One', cursive;
-        margin-top: 15px;
-        margin-bottom: 15px;
+        margin-top: 7px;
+        margin-bottom: 7px;
         padding: 15px;
 
     }
@@ -532,7 +532,7 @@ audio {
         height: 0%;
         position: absolute;
         bottom: 45px;
-        right: 30px;
+        right: 5px;
         height: 15px;
         width: auto;
         color: white;
